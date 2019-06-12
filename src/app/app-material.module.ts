@@ -1,0 +1,33 @@
+import { NgModule } from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+
+@NgModule({
+    imports: [
+      MatButtonModule,
+      MatToolbarModule,
+      MatSidenavModule,
+      MatCheckboxModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatTableModule
+    ],
+    exports:[
+        MatButtonModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatCheckboxModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatTableModule,
+    ]
+})
+
+export class AppMaterialModule {
+
+}
