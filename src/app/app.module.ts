@@ -13,6 +13,7 @@ import { LoginService } from './auth/login/login.service';
 import { RouterGuard } from './service/router-guard.service';
 import { AddComponent } from './user/add/add.component';
 import { UserComponent } from './user/user.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,10 @@ import { UserComponent } from './user/user.component';
     AppMaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [LoginService, RouterGuard],
+  providers: [LoginService, RouterGuard
+  ,    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

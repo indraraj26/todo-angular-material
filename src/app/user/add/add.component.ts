@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-type IUser = {name: string, age: number, hobbies: string, address: string};
-
+type IUser = { name: string, 
+               age: number, 
+               hobbies: string,
+               address: string, 
+               position: number
+  };
 
 @Component({
   selector: 'app-add',
@@ -10,9 +14,11 @@ type IUser = {name: string, age: number, hobbies: string, address: string};
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
-  public addUser: IUser = {name: null, age: null, hobbies: null, address: null};
+  public addUser: IUser = {name: null, age: null, hobbies: null, address: null, position: null};
 
-   constructor(private dialogRef: MatDialogRef<AddComponent>) {}
+   constructor(private dialogRef: MatDialogRef<AddComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
+     this.addUser = data;
+   }
 
    ngOnInit() {}
 
