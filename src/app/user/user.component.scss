@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 30%;
+  }
+
+
+ .mat-column-edit {
+     width:20% !important;
+ }
+
+  .mat-table tbody, .mat-table tfoot, .mat-table thead, .mat-table-sticky, [mat-footer-row], [mat-header-row], [mat-row], mat-footer-row, mat-header-row, mat-row {
+      text-align: center !important;
+  }
+
+  th {
+      text-align: center !important;
+  }

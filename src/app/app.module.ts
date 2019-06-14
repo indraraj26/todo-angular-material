@@ -7,11 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { AddComponent } from './add/add.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginService } from './auth/login/login.service';
 import { RouterGuard } from './service/router-guard.service';
+import { AddComponent } from './user/add/add.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RouterGuard } from './service/router-guard.service';
     HomeComponent,
     AddComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

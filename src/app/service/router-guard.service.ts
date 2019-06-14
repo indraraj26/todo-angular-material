@@ -7,10 +7,7 @@ import { LoginService } from '../auth/login/login.service';
     providedIn:'root'
 })
 export class RouterGuard implements CanActivate {
-    public holdGuard: boolean = false;
-
     constructor(private _loginService: LoginService, private router: Router) {
-
     }
     
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree 

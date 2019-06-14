@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Add User</h1>
+<div mat-dialog-content>
+  <div>
+      <label>Your Name : </label>
+      <mat-form-field>
+        <input matInput [(ngModel)]="addUser.name">
+      </mat-form-field>
+  </div>
+ <div>
+   <label>Your Age : </label>
+   <mat-form-field>
+     <input matInput [(ngModel)]="addUser.age">
+   </mat-form-field>
+ </div>
+ <div>
+   <label>Your Hobbies : </label>
+   <mat-form-field>
+     <textarea matInput [(ngModel)]="addUser.hobbies"></textarea>
+   </mat-form-field>
+ </div>
+ <div>
+   <label>Your Address : </label>
+   <mat-form-field>
+     <textarea matInput [(ngModel)]="addUser.address"></textarea>
+   </mat-form-field>
+ </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [mat-dialog-close]="addUser" cdkFocusInitial>Add</button>
+</div> 

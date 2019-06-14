@@ -1,0 +1,57 @@
+<div style="font-size:17px">
+  User List
+</div>
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<button mat-button (click)="onAdduser()">Add User</button>
+<button mat-button (click)="onclickJav()">Click jack</button> 
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position"> 
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container> 
+
+  <!-- Name Column --> 
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Age Column -->
+  <ng-container matColumnDef="Age">
+    <th mat-header-cell *matHeaderCellDef> Age </th>
+    <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+  </ng-container>
+ 
+  <!-- Hobbies Column -->
+  <ng-container matColumnDef="Hobbies">
+    <th mat-header-cell *matHeaderCellDef> Hobbies </th> 
+    <td mat-cell *matCellDef="let element"> {{element.hobbies}} </td>
+  </ng-container>
+
+   <!-- Address Column -->
+  <ng-container matColumnDef="Address">
+    <th mat-header-cell *matHeaderCellDef> Address </th> 
+    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Action</th> 
+      <td mat-cell *matCellDef="let element">
+        <button mat-button color="primary">Edit</button>
+        <button mat-button color="primary">Delete</button>
+      </td>
+    </ng-container>
+  
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
