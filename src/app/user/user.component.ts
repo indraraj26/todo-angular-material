@@ -11,7 +11,13 @@ import { AddComponent } from './add/add.component';
 export class UserComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'Name', 'Age', 'Hobbies', 'Address' , 'edit'];
-  data = [];
+  data = [{
+    address: "That i dont know",
+age: "25",
+hobbies: "Video games",
+name: "Ronny",
+position: 1,
+  }];
   dataSource =  new MatTableDataSource(this.data);
   constructor(private dialog: MatDialog) { }
 
