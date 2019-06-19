@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ngh:build": "ng build --prod --base-href 'https://indraraj26.github.io/todo-angular-material/'",
-    "ngh:deploy": "ngh --message=seventh-deploy --dir=dist/angular-material"
+    "ngh:build": "ng build --prod --base-href https://indraraj26.github.io/todo-angular-material/",
+    "ngh:deploy": "ngh --dir=dist/angular-material"
   },
   "private": true,
   "dependencies": {
