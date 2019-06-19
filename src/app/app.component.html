@@ -2,12 +2,12 @@
   <span [routerLink]="['home']">TODO</span>
   <span class="margin-space" [routerLink]="['user']">User</span>
   <span class="example-fill-remaining-space" ></span>
-  <span (click)="sidenav.toggle()">Open menu</span>
+  <span (click)="sidenav.toggle()"><mat-icon aria-hidden="false" aria-label="Example home icon">menu</mat-icon></span>
 </mat-toolbar>
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="side" position="end">
-    <p><mat-checkbox [(ngModel)]="opened" >sidenav.opened</mat-checkbox></p>
-    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+    <div class="own-ripple-style" [routerLink]="['/home']" matRipple><mat-icon class="own-icon-style">home</mat-icon>Home</div>
+    <div class="own-ripple-style" [routerLink]="['/user']" matRipple><mat-icon class="own-icon-style">list alt</mat-icon>User</div>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
