@@ -59,6 +59,7 @@ position: 1,
                this.data[i] = result;
              }
            })
+           this.dataSource.data = [...this.data];
         }
       }
   });

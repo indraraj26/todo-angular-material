@@ -17,7 +17,7 @@ export class AddComponent implements OnInit {
   public addUser: IUser = {name: null, age: null, hobbies: null, address: null, position: null};
 
    constructor(private dialogRef: MatDialogRef<AddComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
-     this.addUser = data;
+     this.addUser = Object.assign({},data);
    }
 
    ngOnInit() {}
