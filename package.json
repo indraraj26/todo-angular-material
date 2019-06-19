@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ngh:build": "ng build --prod --base-href 'https://indraraj26.github.io/todo-angular-material/'",
+    "ngh:deploy": "ngh --message=fourth-deploy --dir=dist/angular-material"
   },
   "private": true,
   "dependencies": {
