@@ -14,6 +14,7 @@ import { RouterGuard } from './service/router-guard.service';
 import { AddComponent } from './user/add/add.component';
 import { UserComponent } from './user/user.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { FormGuard } from './service/form-guard.service';
 
 @NgModule({
   declarations: [
@@ -31,8 +32,8 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
     AppMaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [LoginService, RouterGuard
-  ,    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  providers: [LoginService, RouterGuard, FormGuard
+  ,    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}
 ],
   
   bootstrap: [AppComponent]

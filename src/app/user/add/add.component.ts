@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgForm } from '@angular/forms';
 
 type IUser = { name: string, 
                age: number, 
@@ -24,5 +25,9 @@ export class AddComponent implements OnInit {
 
    onCancel(): void {
    this.dialogRef.close();
+  }
+
+  onSubmit(f: NgForm) {
+    this.dialogRef.close(this.addUser);
   }
 }

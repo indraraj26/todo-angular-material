@@ -49,17 +49,19 @@ position: 1,
       console.log('The dialog was closed');
       console.log(result);
       if(result) {
-        if(element === 'new') {
-          this.data.push({position:1, ...result});
-          this.dataSource.data = [...this.data];
-        } else if(from === 'edit') {
-          console.log("this method is getting call")
-           this.data.forEach((data, i) => {
-             if(data.position === element.position) {
-               this.data[i] = result;
-             }
-           })
-           this.dataSource.data = [...this.data];
+        if(result.name) {
+          if(element === 'new') {
+            this.data.push({position:1, ...result});
+            this.dataSource.data = [...this.data];
+          } else if(from === 'edit') {
+            console.log("this method is getting call")
+             this.data.forEach((data, i) => {
+               if(data.position === element.position) {
+                 this.data[i] = result;
+               }
+             })
+             this.dataSource.data = [...this.data];
+          }
         }
       }
   });

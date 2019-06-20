@@ -1,31 +1,38 @@
-<h1 mat-dialog-title>Add User</h1>
-<div mat-dialog-content>
+<form #f="ngForm" (submit)="onSubmit(f)">
+<h1 mat-dialog-title>{{addUser.name ? 'Edit' : 'Add' }} User</h1>
+<div mat-dialog-content> 
   <div>
-      <label>Your Name : </label>
+      <label for="username">Your Name* : </label>
       <mat-form-field>
-        <input matInput [(ngModel)]="addUser.name">
+        <input matInput [(ngModel)]="addUser.name" name="username" id="username" required #username="ngModel">
       </mat-form-field>
+      <div class="validation-error" *ngIf="username.touched && username.hasError('required')">Your name is required.</div>
   </div>
  <div>
-   <label>Your Age : </label>
+   <label for="age">Your Age* : </label>
    <mat-form-field>
-     <input matInput [(ngModel)]="addUser.age">
+     <input matInput [(ngModel)]="addUser.age" name="age" id="age" required #age="ngModel">
    </mat-form-field>
+   <div class="validation-error" *ngIf="age.touched && age.hasError('required')">Your age is required.</div>
+     
  </div>
  <div>
-   <label>Your Hobbies : </label>
+   <label for="hobbies">Your Hobbies* : </label>
    <mat-form-field>
-     <textarea matInput [(ngModel)]="addUser.hobbies"></textarea>
+     <textarea matInput [(ngModel)]="addUser.hobbies" name="hobbies" id="hobbies" required #hobbies="ngModel"></textarea>
    </mat-form-field>
+   <div class="validation-error" *ngIf="hobbies.touched && hobbies.hasError('required')">Your hobbies is required.</div>
+
  </div>
  <div>
-   <label>Your Address : </label>
+   <label for="address">Your Address : </label>
    <mat-form-field>
-     <textarea matInput [(ngModel)]="addUser.address"></textarea>
+     <textarea matInput [(ngModel)]="addUser.address" name="address" id="address"></textarea>
    </mat-form-field>
  </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button [mat-dialog-close]="addUser" cdkFocusInitial>Add</button>
+<div mat-dialog-actions class="btn-align">
+  <button mat-raised-button color="accent" class="btn-size" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" class="btn-size" [disabled]="f.invalid" type="submit">Add</button>
 </div> 
+</form>
